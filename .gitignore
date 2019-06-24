@@ -1,0 +1,5 @@
+instance/
+tmp/
+*.db
+*.pyc
+*.pyo
