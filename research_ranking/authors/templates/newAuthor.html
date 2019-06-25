@@ -1,0 +1,38 @@
+<html>
+  <body>
+    <h1>Add new author</h1>
+
+    <form action="{{url_for('newAuthor')}}" method='POST'>
+      <p>Digital Bibliography:
+        <select name="DigitalBibliography">
+          {% for db in digital_bibliographies %}
+            <option value={{db.id}}>{{db.name}}</option>
+          {% endfor %}
+        </select>
+      </p>
+
+      <p>Name:
+        <input type="text" size='20' name="query">
+        <input type=submit name="search_button" value='Search'>
+      </p>
+
+    {% if authors %}
+    <p>
+      Results:<br>
+      {% for a in authors %}
+      <input type="checkbox" name="author" value="{{a}}">
+      {{a.name}} {% if a.alias %} ({{a.alias}}) {% endif %} <a href='{{a.url}}'>DBLP</a>
+      <br>
+      {% endfor %}
+    </p>
+    <input type=submit name="add_button" value='Add selected authors'>
+    {% else %}
+      No results.
+    {% endif %}
+
+    </form>
+
+    <a href='#'>Cancel</a>
+
+  </body>
+</html>

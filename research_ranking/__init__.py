@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 # Blueprints (components)
-from .ranking.views import ranking
+from .ranking import ranking
 
 app = Flask(__name__, instance_relative_config=True)
 

@@ -9,7 +9,7 @@ class Author(db.Model):
     publications = db.relationship('AuthorPublicationLink', back_populates="author")
 
     def __repr__(self):
-        return '<Author %r (%r)>' % (self.name, self.aliases)
+        return '<Author %r>' % self.name
 
 class Alias(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -45,7 +45,7 @@ class PublicationType(enum.Enum):
 class PublicationVenue(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150), nullable=False, unique=True)
-    acronym = db.Column(db.String(25))
+    acronym = db.Column(db.String(25), nullable=True)
     publications = db.relationship('Publication', backref='publication_venue', lazy=True)
 
     def __repr__(self):

@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <a href='{{url_for('newAuthor')}}'>Add new author</a>
+
+    <h1>Authors</h1>
+
+
+    {% for a in authors %}
+
+      <div>
+
+      <p>{{a.name}}</p>
+
+
+
+
+      <!--INSERT YOUR CODE HERE -->
+
+
+    {% endfor %}
+  </body>
+</html>
