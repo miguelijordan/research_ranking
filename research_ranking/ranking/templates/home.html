@@ -1,22 +1,127 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <title>Research Ranking</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+
   <body>
-    <a href='{{url_for('newAuthor')}}'>Add new author</a>
 
-    <h1>Authors</h1>
+    <!-- header -->
+    <div>
+      <h2>Header</h2>
+    </div>
 
+    <!-- navigation bar -->
+    <div>
+      <h2>Navigation Bar</h2>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+    </div>
 
-    {% for a in authors %}
+    <!-- search bar -->
+    <div>
+      <h2>Search bar</h2>
+        <form action="{{url_for('ranking.home')}}" method='POST'>
+        <p>Digital Bibliography:
+          <select name="DigitalBibliography">
+            {% for db in digital_bibliographies %}
+              <option value={{db.id}}>{{db.name}}</option>
+            {% endfor %}
+          </select>
+        </p>
+
+        <p>Name:
+          <input type="text" size='20' name="query">
+          <input type=submit name="search_button" value='Search'>
+        </p>
+
+      {% if authors %}
+      <p>
+        Results:<br>
+        {% for a in authors %}
+        <input type="checkbox" name="author" value="{{a}}">
+        {{a.name}} {% if a.alias %} ({{a.alias}}) {% endif %} <a href='{{a.url}}'>DBLP</a>
+        <br>
+        {% endfor %}
+      </p>
+      <input type=submit name="add_button" value='Add selected authors'>
+      {% else %}
+        No results.
+      {% endif %}
+
+      </form>
+    </div>
+
+    <!-- main content -->
+    <div>
+      <h2>Research Ranking</h2>
+      <div>
+        <h4>Class S</h4>
+
+        <ol>
+          {% for a in ranking %}
+          <li>
+            <p>{{a.name}}</p>
+            <span>{{a.n_publications}} publications</span> |
+            <span>{{a.n_journals}} journals</span> |
+            <span>{{a.n_conferences}} conferences</span> |
+            <span>{{a.n_others}} others</span>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
 
       <div>
+        <h4>Class A</h4>
 
-      <p>{{a.name}}</p>
+        <ol>
+          {% for a in ranking %}
+          <li>
+            <span>{{a.name}}</span>
 
 
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
 
+      <div>
+        <h4>Class B</h4>
 
-      <!--INSERT YOUR CODE HERE -->
+        <ol>
+          {% for a in ranking %}
+          <li>
+            <span>{{a.name}}</span>
 
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
 
-    {% endfor %}
+      <div>
+        <h4>Class C</h4>
+
+        <ol>
+          {% for a in ranking %}
+          <li>
+            <span>{{a.name}}</span>
+
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+
+    </div>
+
+    <!-- footer -->
+    <div>
+      <h2>Footer</h2>
+    </div>
+
   </body>
 </html>

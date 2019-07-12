@@ -31,8 +31,8 @@ def create_publication_venue(name: str, acronym: str = None):
     db.session.commit()
     return object
 
-def create_publication(title: str, year: int, doi: str, type: PublicationType, venue: PublicationVenue, authors: list):
-    object = Publication(title=title, year=year, doi=doi, type=type, publication_venue=venue)
+def create_publication(title: str, year: int, doi: str, type: PublicationType, publication_venue: PublicationVenue, authors: list):
+    object = Publication(title=title, year=year, doi=doi, type=type, publication_venue=publication_venue)
     db.session.add(object)
     # Add authors of publication
     order = 1
@@ -47,8 +47,19 @@ def create_publication(title: str, year: int, doi: str, type: PublicationType, v
 def get_authors():
     return Author.query.all()
 
+def get_author(name_or_alias: str) -> Author:
+    author = Author.query.filter_by(name=name_or_alias).first()
+    if not author:
+        alias = Alias.query.filter_by(alias=name_or_alias).first()
+        if alias:
+            author = alias.author
+    return author
+
 def get_digital_bibliographies():
     return DigitalBibliography.query.all()
+
+def get_publication_venue(name: str) -> PublicationVenue:
+    return PublicationVenue.query.filter_by(name=name).first()
 
 # UPDATE operations
 

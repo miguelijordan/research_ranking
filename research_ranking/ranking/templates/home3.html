@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Research Ranking</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('ranking.static', filename='css/mystyle/header.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('ranking.static', filename='css/mystyle/navigation_bar.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('ranking.static', filename='css/mystyle/content.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('ranking.static', filename='css/mystyle/footer.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('ranking.static', filename='css/mystyle/leaderboard.css')}}">
+
+
+
+    <!-- Icons -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Ranking -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{url_for('ranking.static', filename='css/ranking.css')}}"> -->
+
+  </head>
+
+  <body>
+
+    <div class="header">
+      <h1>Header</h1>
+    </div>
+
+    <div class="topnav">
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+    </div>
+
+    <div class="flex-container">
+
+      <div class="leaderboard">
+        <h2>Column S</h2>
+        <p>Description of the column very large, so I have to remove extra space in the future.</p>
+        <div>
+          <div class="card">
+
+            <div class="card-top">
+              <div class="card-image">
+                <img src="{{url_for('ranking.static', filename='josemi.jpg')}}" alt="Avatar">
+                <div class="image-text">S#1111</div>
+              </div>
+              <div class="card-data1">
+                  <span class="name">José Miguel Horcas</span>
+                  <span>CAOSD</span>
+                  <span>Departamento de Ciencia y Lenguajes de la Computación</span>
+                  <span>University of Málaga</span>
+                  <span>Málaga, Spain</span>
+              </div>
+              <div class="card-data2">
+                  <span>Málaga, Spain</span>
+                  <span>33 years</span>
+                  <span>Active: 8 years</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-container">
+                <span style="font-weight:bold">Pubs: 30</span> |
+                <i class='fas fa-square' title="Journals" style='color:#c32b72'></i> 50
+                <i class='fas fa-square' title="Conferences and Workshops" style='color:#196ca3'></i> 30
+                <i class='fas fa-square' title="Others" style='color:#606b70;'></i> 5
+              </div>
+            </div>
+
+            <div>
+              <div class="card-footer">
+                <a title="DBLP" href="https://dblp.uni-trier.de/pers/hd/h/Horcas:Jose_Miguel"><i class="material-icons">library_books</i></a>
+                <span>email</span>
+                <span>mobile</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div>#2</div>
+        <div>#3</div>
+        <div>#4</div>
+        <div>#5</div>
+      </div>
+
+      <div class="leaderboard">
+        <h2>Column A</h2>
+        <p>Description of the column very large, so I have to remove extra space in the future.</p>
+        <div>
+          <div class="card">
+
+            <div class="card-top">
+              <div class="card-image">
+                <img src="{{url_for('ranking.static', filename='inma.jpg')}}" alt="Avatar">
+                <div class="image-text">S#1111</div>
+              </div>
+              <div class="card-data1">
+                  <span class="name">Inmaculada Ayala</span>
+                  <span>CAOSD</span>
+                  <span>Departamento de Ciencia y Lenguajes de la Computación</span>
+                  <span>University of Málaga</span>
+              </div>
+              <div class="card-data2">
+                  <span>Málaga, Spain</span>
+                  <span>33 years</span>
+                  <span>Active: 8 years</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-container">
+                <span>publications: 30</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-footer">
+                <span>email</span>
+                <span>mobile</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div>#1</div>
+        <div>#2</div>
+        <div>#3</div>
+        <div>#4</div>
+        <div>#5</div>
+      </div>
+
+      <div class="leaderboard">
+        <h2>Column B</h2>
+        <p>Description of the column very large, so I have to remove extra space in the future.</p>
+          <div>#1</div>
+          <div>#2</div>
+          <div>#3</div>
+          <div>#4</div>
+          <div>#5</div>
+      </div>
+
+      <div class="leaderboard">
+        <h2>Column C</h2>
+        <p>Description of the column very large, so I have to remove extra space in the future.</p>
+          <div>#1</div>
+          <div>#2</div>
+          <div>#3</div>
+          <div>#4</div>
+          <div>#5</div>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <p>Footer</p>
+    </div>
+
+    <!-- <div class="row">
+      <div class="column">
+        <h2>Column S</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+      </div>
+      <div class="column">
+        <h2>Column A</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+      </div>
+
+      <div class="column">
+        <h2>Column B</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+      </div>
+
+      <div class="column">
+        <h2>Column C</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+      </div>
+    </div> -->
+
+
+
+  </body>
+</html>

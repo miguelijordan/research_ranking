@@ -1,6 +1,11 @@
 from . import db
 import enum
 
+class PublicationType(enum.Enum):
+    JOURNAL = "Journal Articles"
+    CONFERENCE = "Conference and Workshop Papers"
+    OTHER = "Informal Publications and Others"
+
 class Author(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False, unique=True)
@@ -36,11 +41,6 @@ class DigitalBibliography(db.Model):
 
     def __repr__(self):
         return '<DigitalBibliography %r, %r>' % (self.name, self.url)
-
-class PublicationType(enum.Enum):
-    JOURNAL = "Journal Article"
-    CONFERENCE = "Conference"
-    OTHER = "Others"
 
 class PublicationVenue(db.Model):
     id = db.Column(db.Integer, primary_key=True)
